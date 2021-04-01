@@ -36,7 +36,8 @@ fetch("https://opentdb.com/api.php?amount=20&category=11&difficulty=easy&type=mu
         return formattedQuestion;
     });
 
-    
+    game.classList.remove("hidden");
+    loader.classList.add("hidden");
     startGame();
 }).catch(err => {
     console.error(err);
@@ -52,8 +53,6 @@ startGame = () => {
     score = 0;
     availableQuestionsArr = [... questionsArr]; //copy the questions into the array and use the spread operator to make a full copy
     getNewQuestion();
-    game.classList.remove("hidden");
-    loader.classList.add("hidden");
 }
 
 getNewQuestion = () => {
